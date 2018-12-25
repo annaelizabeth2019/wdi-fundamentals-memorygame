@@ -1,17 +1,39 @@
 // Memory Game
 // 
-var cards = ["queen", "queen", "king", "king"];
+var cards = [
+{
+rank: "queen",
+suit: "hearts",
+image: "images/queen-of-hearts.png"
+},
+{
+rank: "queen", 
+suit: "diamonds",
+image: "images/queen-of-diamonds.png"
+},
+{
+rank: "king", 
+suit: "hearts",
+image:"images/king-of-hearts.png"
+},
+{
+rank: "king",
+suit: "diamonds",
+image: "images/king-of-diamonds.png"
+},
+];
 var cardsInPlay = [];
-var cardOne = cards[0];
-// var cardThree = [cards[2]];
-// var cardFour = [cards[3]];
-cardsInPlay.push(cardOne);
-// , cardTwo, cardThree, cardFour);
-// console.log("User flipped queen");
-var cardTwo = cards[1];
-cardsInPlay.push(cardTwo);
-// console.log("User flipped king");
-if ((cardsInPlay.length === 2) && (cardsInPlay[0] === cardsInPlay[1])) {alert("You found a match!");
-}
-		else {alert("Sorry, try again!");
+var checkForMatch = function() {
+	if (cardsInPlay[0] === cardsInPlay[1]) {
+		alert("You found a match!");
+	} else {
+		alert("Sorry, try again!");
+		}}
+var flipCard = function(cardID) {
+	console.log("User flipped " + cards[cardID].rank);
+	cardsInPlay.push(cards[cardID].rank);
+	checkForMatch(); console.log(cards[cardID].image);
+console.log(cards[cardID].suit);
 	}
+flipCard(0);
+flipCard(2);
